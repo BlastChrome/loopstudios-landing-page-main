@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Alata", Arial, Helvetica, sans-serif;
+}
+
+html {
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1114px;
+}
+.hidden {
+  display: none;
+}
+
+.hero {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/images/mobile/image-hero.jpg");
+}
+#logo {
+  position: relative;
+  z-index: 1;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 50px;
+}
+
+nav ul {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
+  width: 100%;
+  clip-path: circle(100px at 90% -10%);
+  -webkit-clip-path: circle(00px at 90% -10%);
+  transition: all 650ms ease-out;
+  pointer-events: none;
+}
+
+nav ul.open {
+  clip-path: circle(900px at 110% -100%);
+  -webkit-clip-path: circle(1000px at 90% -10%);
+  pointer-events: all;
+}
+
+nav ul li {
+  margin-bottom: 5px;
+  font-size: 25px;
+  font-family: "Alata", Arial, Helvetica, sans-serif;
+  font-weight: 100;
+}
+#hamburger {
+  cursor: pointer;
+  z-index: 1;
+}
+#close {
+  z-index: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("/images/desktop/image-hero.jpg");
+  }
+
+  #hamburger {
+    display: none;
+  }
+  #close {
+    display: none;
+  }
+  nav {
+    justify-content: space-between;
+  }
+  nav ul {
+    all: unset;
+
+    position: static;
+    height: auto;
+    background-color: transparent;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  nav ul .container {
+    width: 100%;
+  }
+
+  nav ul li {
+    display: inline;
+    margin-left: 45px;
+    font-size: 14px;
+  }
+}
