@@ -136,6 +136,7 @@ main {
 .section-a-big-text {
   margin-top: 40px;
 }
+
 .med-text {
   margin-top: 20px;
   font-weight: bold;
@@ -144,35 +145,100 @@ main {
   line-height: 130%;
 }
 
+/* Section b */
+
+.section-b-big-text {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.mb-img-grid img {
+  width: 100%;
+  max-width: 416px;
+  height: auto;
+}
+
+.mb-img-container {
+  position: relative;
+  margin: auto;
+}
+
+.img-text {
+  position: absolute;
+  color: #fff;
+  left: 0;
+  bottom: 0;
+  padding: 0 0 20px 20px;
+  font-size: 24px;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(34, 34, 34, 0.322);
+}
+.img-dt {
+  display: none;
+}
+footer {
+  margin-top: 80px;
+  width: 100%;
+  background-color: black;
+  padding: 30px 0;
+}
+footer .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer .container li {
+  padding-top: 25px;
+  font-weight: bold;
+}
+footer .social-container {
+  margin-top: 30px;
+  display: flex;
+  width: 10em;
+  justify-content: space-between;
+}
+.grey-text {
+  color: grey;
+  margin-top: 20px;
+}
 @media screen and (min-width: 768px) {
   .hero {
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url("/images/desktop/image-hero.jpg"); */
     background-image: linear-gradient(rgba(0, 0, 0, 0.568), rgba(0, 0, 0, 0.3)),
       url("/images/desktop/image-hero.jpg");
   }
 
   .header-text {
     margin-top: 8rem;
-    border: 2px solid #fff;
     padding: 0;
     min-height: 260px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 650px;
   }
 
   .header-text p {
     font-size: 4rem;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 300;
-    line-height: 105%;
   }
 }
 
 @media screen and (min-width: 1024px) {
+  body {
+    position: relative;
+  }
+  main {
+    position: relative;
+  }
   .hero {
     height: 600px;
   }
@@ -204,29 +270,6 @@ main {
     font-size: 14px;
   }
 
-  .header-text {
-    margin-top: 8rem;
-    border: 2px solid #fff;
-    padding: 0;
-    min-height: 260px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 650px;
-  }
-
-  .header-text p {
-    font-size: 3.5rem;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 300;
-    line-height: 105%;
-  }
-  .section-a {
-    position: relative;
-    /* display: flex;  */
-  }
-
   .section-a-img-wrap img {
     float: left;
     width: 531px;
@@ -234,46 +277,80 @@ main {
   }
   .section-a-content-wrap {
     position: absolute;
-    top: 120px;
-    right: 0;
-    padding: 60px 0 0 60px;
+    /* position: relative; */
+    top: 8rem;
+    left: 33rem;
     background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    width: 500px;
-    height: auto;
-    padding: 3rem 1.5rem;
+    width: 550px;
+    padding: 2.5rem 2.5rem;
     text-align: left;
   }
   .section-a-content-wrap .med-text {
-    text-align: left;
-    font-size: 16px;
+    margin: 0;
   }
-  .section-a .big-text {
-    font-size: 40px;
+  .section-a-big-text {
+    margin-bottom: 20px;
+  }
+  .big-text {
+    font-size: 35px;
+  }
+  .img-dt {
+    display: block;
+  }
+  .img-mb {
+    display: none;
+  }
+  .section-b {
+    position: relative;
   }
 
-  .med-text-container {
-    text-align: left;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .section-a-content-wrap {
+  .section-b-content-wrap {
     position: absolute;
-    top: 110px;
-    right: 210px;
-    padding: 600px 0 0 60px;
-    background-color: #fff;
+    /* position: relative; */
+    width: 100%;
+  }
+
+  .section-b {
+    top: 30rem;
+    left: 0%;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  footer {
+    position: absolute;
+    /* position: relative; */
+    width: 100%;
+    top: 380%;
+    min-height: 200px;
+  }
+  footer .container {
+    position: relative;
+  }
+  footer .footer-logo {
+    position: relative;
+    top: 1rem;
+    right: 29rem;
+  }
+  footer .footer-links {
+    position: relative;
+    top: 3.8rem;
+    right: 24.9rem;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    width: 500px;
-    height: auto;
-    padding: 3rem 1.5rem;
-    text-align: left;
+  }
+  footer .footer-links li {
+    padding: 0 15px 0 0;
+  }
+
+  footer .social-container {
+    position: absolute;
+    right: 0;
+  }
+
+  footer .grey-text {
+    position: absolute;
+    right: 0;
+    top: 165%;
   }
 }
